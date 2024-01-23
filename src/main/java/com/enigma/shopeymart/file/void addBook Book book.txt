@@ -1,0 +1,38 @@
+    void addBook(Book book);
+        Deskripsi: Metode ini tidak mengembalikan nilai (void) dan bertujuan untuk menambahkan buku ke inventory.
+        Parameter: Sebuah objek Book yang akan ditambahkan ke inventory.
+
+    Book seacrhBookById(String code);
+        Deskripsi: Metode ini bertujuan untuk mencari buku berdasarkan kode buku.
+        Parameter: Sebuah string code yang digunakan sebagai kriteria pencarian.
+        Return Value: Objek Book yang sesuai dengan kode buku yang dicari atau null jika tidak ditemukan.
+
+    List<Book> seacrhBookByTitle(String title);
+        Deskripsi: Metode ini bertujuan untuk mencari buku berdasarkan judul.
+        Parameter: Sebuah string title yang digunakan sebagai kriteria pencarian.
+        Return Value: Daftar (List) objek Book yang memiliki judul yang sesuai dengan kriteria pencarian. Jika tidak ada yang cocok, daftar akan kosong.
+
+    void deleteBook(String code);
+        Deskripsi: Metode ini bertujuan untuk menghapus buku dari inventory berdasarkan kode buku.
+        Parameter: Sebuah string code yang digunakan sebagai kriteria penghapusan.
+
+    List<Book> getAllBooks();
+        Deskripsi: Metode ini bertujuan untuk mendapatkan semua buku yang ada di inventory.
+        Return Value: Daftar (List) seluruh objek Book yang ada di inventory. Jika inventory kosong, daftar akan kosong.
+
+Kode ini merupakan definisi antarmuka untuk layanan inventaris buku (InventoryService). Antarmuka ini menyediakan kontrak untuk operasi dasar yang dapat dilakukan pada inventaris buku, seperti menambahkan buku, mencari buku berdasarkan ID atau judul, menghapus buku, dan mendapatkan seluruh daftar buku. Implementasi dari antarmuka ini dapat dilakukan dalam kelas lain yang mengimplementasikan InventoryService.
+
+
+
+Dalam konteks yang diberikan, penggunaan kata kunci static pada variabel novelCounter dan magazineCounter serta metode formatNovelCode menunjukkan bahwa variabel dan metode tersebut terkait dengan kelas itu sendiri, bukan dengan instance spesifik dari kelas tersebut. Mari kita bahas penggunaan static dalam konteks ini:
+
+    Variabel novelCounter dan magazineCounter:
+        static int novelCounter = 1; dan static int magazineCounter = 1; menunjukkan bahwa kedua variabel ini adalah variabel statis kelas. Ini berarti nilai dari variabel-variabel ini bersifat bersama-sama di antara semua instance dari kelas tersebut.
+        Variabel statis kelas digunakan ketika nilai variabel tersebut harus dibagi di antara semua instance dari kelas dan tidak spesifik untuk setiap instance individu. Dalam hal ini, novelCounter dan magazineCounter mungkin digunakan untuk melacak berapa banyak novel dan majalah yang telah dibuat secara keseluruhan, bukan terkait dengan setiap instance buku individu.
+
+    Metode formatNovelCode:
+        static String formatNovelCode(int year) menunjukkan bahwa metode ini adalah metode statis kelas. Artinya, metode ini dapat dipanggil tanpa membuat instance dari kelas tersebut.
+        Metode statis kelas umumnya digunakan untuk operasi yang terkait dengan kelas secara keseluruhan dan tidak bergantung pada status instance tertentu.
+
+Penggunaan kata kunci static di sini sesuai jika Anda ingin melacak jumlah novel dan majalah secara global di seluruh kelas dan tidak ingin ketergantungan pada instance spesifik. Namun, penggunaan variabel statis juga membutuhkan hati-hati, terutama jika program Anda menjadi lebih kompleks, karena dapat mempengaruhi keterbacaan kode dan pengelolaan status.
+

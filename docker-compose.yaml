@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  postgresql:
+    container_name: postgresql
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db_pascal14
+    networks:
+      - app-network
+    volumes:
+      - "my-data:/var/lib/postgresql/data"
+    image: postgres
+
+  app-shopeymart:
+    container_name: shopeymart-app
+    environment:
+      - DB_HOST=postgresql
+      - DB_PORT=5432
+      - SERVER_PORT=8090
+      - DB_NAME=db_pascal14
+      - DB_USERNAME=postgres
+      - DIRECTORY_PATH=/home
+      - DB_PASSWORD=password
+    ports:
+      - "8085:8090"
+    build: .
+    volumes:
+      - "my-data:/home"
+    networks:
+      - app-network
+
+volumes:
+  my-data:
+networks:
+  app-network:
+    driver: bridge

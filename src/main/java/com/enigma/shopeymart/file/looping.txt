@@ -1,0 +1,34 @@
+looping
+1. for loop
+2. do while loop
+3. whie loop
+4. infinite loop / tak terhingga bisa berhenti tapi kita tahu
+5. counted loop / hitung
+6. forefer loop / perulangan tanpa batas
+
+
+
+tujuan menggunakan perulangan untuk automatisasi agar bisa berulang dengan sendirinya
+
+hitung total harga belanjaanya
+daftar barang
+harga
+
+1. mencari nilai rata rata dari sejumlah nilai yang dimasukan pengguna :
+
+start
+deklarasi total nilai dan count
+total nilai = 0, 
+count = 0,
+melakukan perulangan input nilai yang dimasukan pengguna 
+menjumlahkan nilai yang diinput ke dalam total nilai
+lakukan lagi perulangan increment menghitung count / banyakknya nilai yang diinput pengguna
+hitung rata rata dengan rumus = total nilai / count
+tampilkan nilai rata rata
+end
+
+
+
+
+
+
